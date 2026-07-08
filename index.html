@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="极简个人摄影作品网站，占位版本，包含作品画廊、关于我和联系方式。"
+    >
+    <title>个人摄影作品集</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="网站页眉">
+      <a class="brand" href="#top" aria-label="回到顶部">Photography</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#gallery">作品画廊</a>
+        <a href="#about">关于我</a>
+        <a href="#contact">联系方式</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Personal Photography Portfolio</p>
+        <h1 id="hero-title">以克制的版面，留给照片更多呼吸。</h1>
+        <p class="hero-copy">
+          这里是第一版占位搭版。后续可以把渐变占位替换为真实作品照片，并按系列、地点或主题继续调整叙事。
+        </p>
+      </section>
+
+      <section class="section" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <p class="eyebrow">Gallery</p>
+          <h2 id="gallery-title">作品画廊</h2>
+        </div>
+
+        <div class="masonry-grid">
+          <!--
+            替换真实照片时：
+            1. 将 .photo-placeholder 换成 <img src="./assets/photo-01.jpg" alt="照片描述">
+            2. 保留 .photo-card 和 figcaption，瀑布流布局会自动适配图片高度。
+          -->
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-warm height-tall" role="img" aria-label="暖色调摄影占位图"></div>
+            <figcaption>
+              <span>Series 01</span>
+              <strong>晨光中的街角</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-cool height-medium" role="img" aria-label="冷色调摄影占位图"></div>
+            <figcaption>
+              <span>Series 02</span>
+              <strong>雨后窗边</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-neutral height-short" role="img" aria-label="中性色摄影占位图"></div>
+            <figcaption>
+              <span>Series 03</span>
+              <strong>留白与静物</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-muted height-wide" role="img" aria-label="柔和色摄影占位图"></div>
+            <figcaption>
+              <span>Series 04</span>
+              <strong>海边的风</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-stone height-medium" role="img" aria-label="石色摄影占位图"></div>
+            <figcaption>
+              <span>Series 05</span>
+              <strong>城市边缘</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-soft height-tall" role="img" aria-label="柔光摄影占位图"></div>
+            <figcaption>
+              <span>Series 06</span>
+              <strong>午后的影子</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-cool height-short" role="img" aria-label="冷灰色摄影占位图"></div>
+            <figcaption>
+              <span>Series 07</span>
+              <strong>山间薄雾</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-placeholder tone-warm height-wide" role="img" aria-label="暖灰色摄影占位图"></div>
+            <figcaption>
+              <span>Series 08</span>
+              <strong>日落之后</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section split-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">关于我</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            我是一名关注日常光线、空间秩序与安静瞬间的摄影创作者。这个作品集将用于展示个人长期拍摄项目、旅行记录和仍在进行中的影像练习。
+          </p>
+          <p>
+            当前文字为占位文案，后续可以替换成更具体的创作背景、拍摄主题或个人简介。
+          </p>
+        </div>
+      </section>
+
+      <section class="section split-section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">联系方式</h2>
+        </div>
+        <div class="section-body">
+          <p>如需合作、约拍或作品交流，可以先放置以下占位联系方式，之后替换为真实信息。</p>
+          <ul class="contact-list" aria-label="联系方式列表">
+            <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://www.xiaohongshu.com/" target="_blank" rel="noreferrer">小红书</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="current-year">2026</span> Photography Portfolio</span>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
