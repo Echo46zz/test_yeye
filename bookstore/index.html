@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>书屿 — 把好书送到手边</title>
+  <meta name="description" content="书屿：精选纸质书与电子书，安静地买书。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Outfit:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">书屿</a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#featured">书单</a>
+      <a href="#cta-browse">购买</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="首页主视觉">
+      <div class="hero-media" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          width="1920"
+          height="1280"
+        />
+      </div>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="brand">书屿</p>
+        <h1>安静地，把下一本好书带回家。</h1>
+        <p class="lede">精选纸质书与电子书，从文学到实用，只留值得翻开的那几本。</p>
+        <div class="cta-group">
+          <a class="btn btn-primary" id="cta-browse" href="#featured">浏览书单</a>
+          <a class="btn btn-ghost" href="#featured">本周新到</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" id="featured">
+      <header class="section-head">
+        <h2>本周在售</h2>
+        <p>先挑这几本，后续会继续补全分类与详情页。</p>
+      </header>
+
+      <ul class="book-list">
+        <li>
+          <a class="book-row" href="#">
+            <span class="book-title">海边的卡夫卡</span>
+            <span class="book-meta">村上春树 · 文学</span>
+            <span class="book-price">¥48</span>
+          </a>
+        </li>
+        <li>
+          <a class="book-row" href="#">
+            <span class="book-title">人类简史</span>
+            <span class="book-meta">尤瓦尔·赫拉利 · 社科</span>
+            <span class="book-price">¥68</span>
+          </a>
+        </li>
+        <li>
+          <a class="book-row" href="#">
+            <span class="book-title">设计中的设计</span>
+            <span class="book-meta">原研哉 · 设计</span>
+            <span class="book-price">¥56</span>
+          </a>
+        </li>
+        <li>
+          <a class="book-row" href="#">
+            <span class="book-title">深夜食堂</span>
+            <span class="book-meta">安倍夜郎 · 漫画</span>
+            <span class="book-price">¥39</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>书屿 · 首页草稿</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
