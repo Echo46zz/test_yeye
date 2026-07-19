@@ -2,31 +2,31 @@
 
 ## Summary
 
-Latest repository change adds a small Python CLI calculator under `python-calculator/`.
-It evaluates arithmetic expressions with Python `ast` instead of raw `eval`, includes unit tests, and documents usage.
-Current feature branch has no additional diff beyond the base branch, so this report reviews the latest commit contents.
+PR #18 adds a static draft homepage for a bookstore brand named "书屿".
+The change is front-end only: one HTML page, one stylesheet, and one small script for reveal animation.
 
 ## Changed Files
 
-- `python-calculator/calculator.py` - Implements CLI parsing, stdin fallback, AST-based arithmetic evaluation, result formatting, and error handling.
-- `python-calculator/test_calculator.py` - Adds pytest coverage for basic operations, decimals, precedence, parentheses, division by zero, invalid input, and output formatting.
-- `python-calculator/README.md` - Documents features, usage examples, error behavior, and how to run tests.
+- `bookstore/index.html` - Adds the bookstore landing page structure, hero content, navigation anchors, featured book list, external font loading, and Unsplash hero image.
+- `bookstore/styles.css` - Adds responsive layout, typography, color tokens, hero image treatment, CTA/button styling, list styling, and reduced-motion handling for CSS animations.
+- `bookstore/main.js` - Adds a guarded `IntersectionObserver` reveal effect for the featured section, with fallback behavior and reduced-motion opt-out.
 
 ## Potential Risks
 
-- Correctness: `float("nan")`/`float("inf")` style input is rejected, but very large numeric literals or deeply nested expressions may still consume significant CPU or memory during parsing/evaluation.
-- Correctness: `format_result` converts floats equal to integers into integer strings, which may hide precision surprises for very large floating-point results.
-- Security/robustness: AST node filtering blocks names, calls, attributes, and unsupported operators, but there is no explicit expression length or AST depth limit.
-- Maintainability: The supported operator set is hard-coded and small; future operator additions need matching tests and README updates.
-- Testability: Existing tests focus on pure functions and do not exercise CLI exit codes, stderr messages, or stdin behavior.
+- Correctness: product rows currently use `href="#"`, so clicking a book does not navigate and may unexpectedly jump the page when real catalog/detail behavior is expected.
+- Security/privacy: Google Fonts and Unsplash are loaded from third-party origins; this adds availability, tracking/privacy, and future CSP considerations.
+- Performance: the full-bleed remote hero image is requested at high resolution and may be expensive on slow/mobile connections unless image sizing or local assets are later optimized.
+- Accessibility: the page has reduced-motion handling, but interactive links, focus states, color contrast over the hero image, and mobile keyboard navigation still need browser validation.
+- Maintainability: book data is hard-coded in HTML, which is fine for a draft but will become difficult to update once inventory, pricing, localization, or detail pages are introduced.
 
 ## Suggested Tests
 
-- Add subprocess-based CLI tests for argument input, stdin input, empty input, invalid expressions, and division-by-zero exit code `1`.
-- Add stress/guard tests for very long expressions and deeply nested parentheses if input limits are introduced.
-- Add tests for unsupported AST forms such as function calls, attribute access, lists, comparisons, boolean operators, and assignments.
-- Add result-formatting tests for large floats and precision edge cases.
+- Add a lightweight browser smoke test that opens `bookstore/index.html`, verifies the hero, CTA links, featured section, and footer render without console errors.
+- Add responsive visual checks for desktop, tablet, and mobile widths, especially hero height, book-row wrapping, and CTA layout.
+- Add accessibility checks for keyboard tab order, visible focus, heading structure, reduced-motion behavior, and contrast over the hero image.
+- Add link-behavior tests once catalog or detail destinations replace the current `href="#"` placeholders.
+- Add a performance budget or Lighthouse-style check before shipping the remote image/font dependencies to production.
 
 ## Recommended Next Action
 
-Add CLI-level tests first, then consider explicit input length/depth limits before accepting untrusted or externally supplied expressions.
+Keep this as a draft until placeholder book links are replaced, external asset choices are reviewed, and basic browser/accessibility smoke tests pass.
