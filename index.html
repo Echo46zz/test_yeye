@@ -5,144 +5,268 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="极简个人摄影作品网站，占位版本，包含作品画廊、关于我和联系方式。"
+      content="林叙 · 个人摄影作品集：风光、人像、纪实与自然摄影，支持分类筛选与全屏灯箱浏览。"
     >
-    <title>个人摄影作品集</title>
+    <meta name="theme-color" content="#0e0f11">
+    <meta property="og:title" content="林叙 · 摄影作品集">
+    <meta property="og:description" content="风光、人像、纪实与自然摄影作品集。">
+    <meta property="og:image" content="./assets/photos/hero.jpg">
+    <title>林叙 · 摄影作品集</title>
+    <link rel="preload" as="image" href="./assets/photos/hero.jpg">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <header class="site-header" aria-label="网站页眉">
-      <a class="brand" href="#top" aria-label="回到顶部">Photography</a>
+    <a class="skip-link" href="#gallery">跳到作品画廊</a>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="#top">
+        林叙<span>Photography</span>
+      </a>
       <nav class="site-nav" aria-label="主导航">
-        <a href="#gallery">作品画廊</a>
-        <a href="#about">关于我</a>
-        <a href="#contact">联系方式</a>
+        <a href="#gallery">作品</a>
+        <a href="#series">系列</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系</a>
       </nav>
     </header>
 
-    <main id="top">
+    <main>
       <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">Personal Photography Portfolio</p>
-        <h1 id="hero-title">以克制的版面，留给照片更多呼吸。</h1>
-        <p class="hero-copy">
-          这里是第一版占位搭版。后续可以把渐变占位替换为真实作品照片，并按系列、地点或主题继续调整叙事。
-        </p>
+        <img class="hero-image" src="./assets/photos/hero.jpg" alt="苏格兰高地蜿蜒公路的清晨风光" fetchpriority="high">
+        <div class="hero-copy">
+          <p class="eyebrow">Landscape · Portrait · Documentary</p>
+          <h1 id="hero-title">光落下的地方，<br>就是故事开始的地方。</h1>
+          <p class="lede">
+            我是林叙，一名以自然光为主的摄影师。过去八年里，我在二十余个国家记录山海、街巷与人。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#gallery">浏览作品</a>
+            <a class="btn" href="#contact">预约拍摄</a>
+          </div>
+        </div>
+        <a class="hero-scroll" href="#gallery" aria-label="向下浏览">↓</a>
       </section>
 
       <section class="section" id="gallery" aria-labelledby="gallery-title">
         <div class="section-heading">
           <p class="eyebrow">Gallery</p>
           <h2 id="gallery-title">作品画廊</h2>
+          <p class="section-copy">按主题筛选，点击任意照片进入全屏浏览（支持 ← → 切换、Esc 关闭）。</p>
         </div>
 
-        <div class="masonry-grid">
-          <!--
-            替换真实照片时：
-            1. 将 .photo-placeholder 换成 <img src="./assets/photo-01.jpg" alt="照片描述">
-            2. 保留 .photo-card 和 figcaption，瀑布流布局会自动适配图片高度。
-          -->
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-warm height-tall" role="img" aria-label="暖色调摄影占位图"></div>
-            <figcaption>
-              <span>Series 01</span>
-              <strong>晨光中的街角</strong>
-            </figcaption>
+        <div class="filters" role="tablist" aria-label="作品分类筛选">
+          <button class="filter is-active" type="button" role="tab" aria-selected="true" data-filter="all">全部</button>
+          <button class="filter" type="button" role="tab" aria-selected="false" data-filter="landscape">风光</button>
+          <button class="filter" type="button" role="tab" aria-selected="false" data-filter="portrait">人像</button>
+          <button class="filter" type="button" role="tab" aria-selected="false" data-filter="street">纪实</button>
+          <button class="filter" type="button" role="tab" aria-selected="false" data-filter="nature">自然</button>
+          <button class="filter" type="button" role="tab" aria-selected="false" data-filter="urban">城市 / 静物</button>
+        </div>
+
+        <div class="masonry" id="masonry">
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/fjord-blue.jpg" data-title="峡谷之蓝" data-meta="挪威 吕瑟峡湾 · 2023">
+            <img src="./assets/thumbs/fjord-blue.jpg" alt="俯瞰挪威峡湾深蓝色水面与岩壁" loading="lazy" width="800" height="533">
+            <figcaption><strong>峡谷之蓝</strong><span>挪威 吕瑟峡湾 · 2023</span></figcaption>
           </figure>
 
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-cool height-medium" role="img" aria-label="冷色调摄影占位图"></div>
-            <figcaption>
-              <span>Series 02</span>
-              <strong>雨后窗边</strong>
-            </figcaption>
+          <figure class="photo-card" data-category="portrait" data-full="./assets/photos/camera-hands.jpg" data-title="她与相机" data-meta="工作室 · 2023">
+            <img src="./assets/thumbs/camera-hands.jpg" alt="人像特写：双手捧着一台胶片相机" loading="lazy" width="800" height="1067">
+            <figcaption><strong>她与相机</strong><span>工作室 · 2023</span></figcaption>
           </figure>
 
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-neutral height-short" role="img" aria-label="中性色摄影占位图"></div>
-            <figcaption>
-              <span>Series 03</span>
-              <strong>留白与静物</strong>
-            </figcaption>
+          <figure class="photo-card" data-category="street" data-full="./assets/photos/market-crowd.jpg" data-title="市集人潮" data-meta="台北 · 2022">
+            <img src="./assets/thumbs/market-crowd.jpg" alt="街头纪实：背包旅人穿行于喧闹的街市人潮" loading="lazy" width="800" height="1067">
+            <figcaption><strong>市集人潮</strong><span>台北 · 2022</span></figcaption>
           </figure>
 
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-muted height-wide" role="img" aria-label="柔和色摄影占位图"></div>
-            <figcaption>
-              <span>Series 04</span>
-              <strong>海边的风</strong>
-            </figcaption>
+          <figure class="photo-card" data-category="nature" data-full="./assets/photos/lioness.jpg" data-title="母狮凝视" data-meta="肯尼亚 马赛马拉 · 2020">
+            <img src="./assets/thumbs/lioness.jpg" alt="草原母狮正面凝视镜头的特写" loading="lazy" width="800" height="1067">
+            <figcaption><strong>母狮凝视</strong><span>肯尼亚 马赛马拉 · 2020</span></figcaption>
           </figure>
 
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-stone height-medium" role="img" aria-label="石色摄影占位图"></div>
-            <figcaption>
-              <span>Series 05</span>
-              <strong>城市边缘</strong>
-            </figcaption>
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/red-canyon.jpg" data-title="赤岩落日" data-meta="美国西部 · 2022">
+            <img src="./assets/thumbs/red-canyon.jpg" alt="落日照亮红色砂岩峡谷" loading="lazy" width="800" height="533">
+            <figcaption><strong>赤岩落日</strong><span>美国西部 · 2022</span></figcaption>
           </figure>
 
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-soft height-tall" role="img" aria-label="柔光摄影占位图"></div>
-            <figcaption>
-              <span>Series 06</span>
-              <strong>午后的影子</strong>
-            </figcaption>
+          <figure class="photo-card" data-category="urban" data-full="./assets/photos/aerial-pitch.jpg" data-title="球场俯瞰" data-meta="城市航拍 · 2021">
+            <img src="./assets/thumbs/aerial-pitch.jpg" alt="从空中垂直俯拍的绿色球场" loading="lazy" width="800" height="533">
+            <figcaption><strong>球场俯瞰</strong><span>城市航拍 · 2021</span></figcaption>
           </figure>
 
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-cool height-short" role="img" aria-label="冷灰色摄影占位图"></div>
-            <figcaption>
-              <span>Series 07</span>
-              <strong>山间薄雾</strong>
-            </figcaption>
+          <figure class="photo-card" data-category="portrait" data-full="./assets/photos/golden-field.jpg" data-title="逆光草地" data-meta="京都 · 2022">
+            <img src="./assets/thumbs/golden-field.jpg" alt="逆光下走向夕阳草地的女孩背影" loading="lazy" width="800" height="1067">
+            <figcaption><strong>逆光草地</strong><span>京都 · 2022</span></figcaption>
           </figure>
 
-          <figure class="photo-card reveal">
-            <div class="photo-placeholder tone-warm height-wide" role="img" aria-label="暖灰色摄影占位图"></div>
-            <figcaption>
-              <span>Series 08</span>
-              <strong>日落之后</strong>
-            </figcaption>
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/forest-waterfall.jpg" data-title="林间瀑布" data-meta="俄勒冈 · 2021">
+            <img src="./assets/thumbs/forest-waterfall.jpg" alt="雾气笼罩的森林与倾泻的瀑布" loading="lazy" width="800" height="533">
+            <figcaption><strong>林间瀑布</strong><span>俄勒冈 · 2021</span></figcaption>
           </figure>
+
+          <figure class="photo-card" data-category="nature" data-full="./assets/photos/eagle-flight.jpg" data-title="鹰的航线" data-meta="阿拉斯加 · 2021">
+            <img src="./assets/thumbs/eagle-flight.jpg" alt="展翅飞行中的猛禽特写" loading="lazy" width="800" height="533">
+            <figcaption><strong>鹰的航线</strong><span>阿拉斯加 · 2021</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="street" data-full="./assets/photos/live-night.jpg" data-title="现场之夜" data-meta="上海 · 2023">
+            <img src="./assets/thumbs/live-night.jpg" alt="演出现场逆光中举手的观众剪影" loading="lazy" width="800" height="533">
+            <figcaption><strong>现场之夜</strong><span>上海 · 2023</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/valley-morning.jpg" data-title="山谷清晨" data-meta="优胜美地 · 2022">
+            <img src="./assets/thumbs/valley-morning.jpg" alt="清晨山谷中的森林与花岗岩峭壁" loading="lazy" width="800" height="533">
+            <figcaption><strong>山谷清晨</strong><span>优胜美地 · 2022</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="urban" data-full="./assets/photos/coffee-notes.jpg" data-title="咖啡与账单" data-meta="京都 · 2022">
+            <img src="./assets/thumbs/coffee-notes.jpg" alt="木桌上的拉花咖啡与收据静物" loading="lazy" width="800" height="800">
+            <figcaption><strong>咖啡与账单</strong><span>京都 · 2022</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="portrait" data-full="./assets/photos/red-beanie.jpg" data-title="红帽子" data-meta="森林旅拍 · 2023">
+            <img src="./assets/thumbs/red-beanie.jpg" alt="戴红色毛线帽的女孩举起相机拍摄" loading="lazy" width="800" height="1067">
+            <figcaption><strong>红帽子</strong><span>森林旅拍 · 2023</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/sea-cliffs.jpg" data-title="海岬崖壁" data-meta="葡萄牙 · 2023">
+            <img src="./assets/thumbs/sea-cliffs.jpg" alt="航拍海岸线上的白色崖壁与礁石" loading="lazy" width="800" height="533">
+            <figcaption><strong>海岬崖壁</strong><span>葡萄牙 · 2023</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="nature" data-full="./assets/photos/jellyfish.jpg" data-title="漂浮" data-meta="海洋馆 · 2022">
+            <img src="./assets/thumbs/jellyfish.jpg" alt="深蓝色背景中的橙色水母" loading="lazy" width="800" height="1067">
+            <figcaption><strong>漂浮</strong><span>海洋馆 · 2022</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="street" data-full="./assets/photos/cliff-edge.jpg" data-title="崖边的人们" data-meta="马耳他 · 2022">
+            <img src="./assets/thumbs/cliff-edge.jpg" alt="人们坐在白色海崖边远眺海面" loading="lazy" width="800" height="533">
+            <figcaption><strong>崖边的人们</strong><span>马耳他 · 2022</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="nature" data-full="./assets/photos/succulents.jpg" data-title="多肉纹理" data-meta="温室 · 2023">
+            <img src="./assets/thumbs/succulents.jpg" alt="排列紧密的多肉植物纹理特写" loading="lazy" width="800" height="800">
+            <figcaption><strong>多肉纹理</strong><span>温室 · 2023</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/lone-rock.jpg" data-title="海上孤礁" data-meta="冰岛 · 2021">
+            <img src="./assets/thumbs/lone-rock.jpg" alt="平静海面上的一块孤礁，极简构图" loading="lazy" width="800" height="533">
+            <figcaption><strong>海上孤礁</strong><span>冰岛 · 2021</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/storm-hills.jpg" data-title="雨前山峦" data-meta="苏格兰 · 2021">
+            <img src="./assets/thumbs/storm-hills.jpg" alt="乌云压境下起伏的绿色山峦" loading="lazy" width="800" height="533">
+            <figcaption><strong>雨前山峦</strong><span>苏格兰 · 2021</span></figcaption>
+          </figure>
+
+          <figure class="photo-card" data-category="landscape" data-full="./assets/photos/highland-road.jpg" data-title="高地公路" data-meta="苏格兰 斯凯岛 · 2023">
+            <img src="./assets/thumbs/highland-road.jpg" alt="穿过高地山脊的蜿蜒公路" loading="lazy" width="800" height="533">
+            <figcaption><strong>高地公路</strong><span>苏格兰 斯凯岛 · 2023</span></figcaption>
+          </figure>
+        </div>
+
+        <p class="empty-state" id="empty-state" hidden>该分类下暂时还没有作品。</p>
+      </section>
+
+      <section class="section" id="series" aria-labelledby="series-title">
+        <div class="section-heading">
+          <p class="eyebrow">Series</p>
+          <h2 id="series-title">进行中的系列</h2>
+        </div>
+        <div class="series-grid">
+          <article class="series-card">
+            <h3>北纬 60 度</h3>
+            <p>用三个冬天记录北欧海岸线上的光与雪，2024 年将结集成册。</p>
+            <span class="series-meta">风光 · 12 幅</span>
+          </article>
+          <article class="series-card">
+            <h3>城市里的陌生人</h3>
+            <p>在通勤高峰的地铁与街角，寻找不被打扰的真实表情。</p>
+            <span class="series-meta">纪实 · 持续更新</span>
+          </article>
+          <article class="series-card">
+            <h3>自然光肖像</h3>
+            <p>只用窗光与日落，拍摄不需要摆姿势的人像。</p>
+            <span class="series-meta">人像 · 接受约拍</span>
+          </article>
         </div>
       </section>
 
-      <section class="section split-section" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="about-media">
+          <img src="./assets/thumbs/red-beanie.jpg" alt="摄影师手持相机的工作照" loading="lazy">
+        </div>
+        <div class="about-copy">
           <p class="eyebrow">About</p>
           <h2 id="about-title">关于我</h2>
-        </div>
-        <div class="section-body">
           <p>
-            我是一名关注日常光线、空间秩序与安静瞬间的摄影创作者。这个作品集将用于展示个人长期拍摄项目、旅行记录和仍在进行中的影像练习。
+            林叙，自由摄影师，现居杭州。擅长在自然光条件下完成风光与人像创作，作品曾入选国家地理旅行者摄影展，
+            并为多家旅行与生活方式品牌拍摄。
           </p>
           <p>
-            当前文字为占位文案，后续可以替换成更具体的创作背景、拍摄主题或个人简介。
+            我相信好照片来自等待：等一场雾散、等一个人放下防备。拍摄时我尽量少干预，让画面保留原本的呼吸。
           </p>
+          <dl class="facts">
+            <div><dt>拍摄年限</dt><dd>8 年</dd></div>
+            <div><dt>到访国家</dt><dd>23 个</dd></div>
+            <div><dt>常用器材</dt><dd>Sony A7R V · 35mm / 85mm</dd></div>
+            <div><dt>服务</dt><dd>人像约拍 · 品牌旅拍 · 图片授权</dd></div>
+          </dl>
         </div>
       </section>
 
-      <section class="section split-section contact-section" id="contact" aria-labelledby="contact-title">
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div class="section-heading">
           <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">联系方式</h2>
+          <h2 id="contact-title">聊聊你的拍摄计划</h2>
+          <p class="section-copy">约拍、商业合作或作品授权，都欢迎来信，通常 24 小时内回复。</p>
         </div>
-        <div class="section-body">
-          <p>如需合作、约拍或作品交流，可以先放置以下占位联系方式，之后替换为真实信息。</p>
-          <ul class="contact-list" aria-label="联系方式列表">
-            <li><a href="mailto:hello@example.com">hello@example.com</a></li>
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
-            <li><a href="https://www.xiaohongshu.com/" target="_blank" rel="noreferrer">小红书</a></li>
+        <div class="contact-grid">
+          <ul class="contact-list">
+            <li><span>邮箱</span><a href="mailto:hello@linxu.photo">hello@linxu.photo</a></li>
+            <li><span>微信</span><a href="#contact">linxu-photo</a></li>
+            <li><span>Instagram</span><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">@linxu.photo</a></li>
+            <li><span>所在地</span><a href="#contact">杭州 · 可全国出行</a></li>
           </ul>
+          <form class="contact-form" id="contact-form" novalidate>
+            <label>
+              称呼
+              <input type="text" name="name" required autocomplete="name" placeholder="你的名字">
+            </label>
+            <label>
+              邮箱
+              <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label>
+              拍摄需求
+              <textarea name="message" rows="4" required placeholder="时间、地点、想要的风格……"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">发送需求</button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>© <span id="current-year">2026</span> Photography Portfolio</span>
-      <a href="#top">回到顶部</a>
+      <p>© <span id="year">2024</span> 林叙 Photography · 保留所有权利</p>
+      <p class="credit">示例照片来自 <a href="https://picsum.photos" target="_blank" rel="noopener noreferrer">Lorem Picsum</a>，替换为真实作品后请同步更新说明文字。</p>
     </footer>
 
-    <script src="./script.js"></script>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="作品全屏浏览" hidden>
+      <button class="lb-close" type="button" aria-label="关闭">✕</button>
+      <button class="lb-nav lb-prev" type="button" aria-label="上一张">‹</button>
+      <figure class="lb-figure">
+        <img id="lb-image" src="" alt="">
+        <figcaption>
+          <strong id="lb-title"></strong>
+          <span id="lb-meta"></span>
+          <span class="lb-counter" id="lb-counter"></span>
+        </figcaption>
+      </figure>
+      <button class="lb-nav lb-next" type="button" aria-label="下一张">›</button>
+    </div>
+
+    <script src="./script.js" defer></script>
   </body>
 </html>
