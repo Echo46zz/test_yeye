@@ -1,0 +1,50 @@
+{
+  "name": "Centralized CRM AI Platform — Dribbble #27541284",
+  "source": {
+    "dribbble": "https://dribbble.com/shots/27541284--Centralized-CRM-AI-Platform-SaaS-Landing-Page-Design",
+    "designer": "Airzon Agency",
+    "liveUrl": null,
+    "note": "No public live Framer URL found for this shot; recreation based on Dribbble media + color palette."
+  },
+  "figmaTarget": {
+    "fileKey": "4lKmMx07UM5zkt8vNaYaRj",
+    "nodeId": "42:5512",
+    "url": "https://www.figma.com/design/4lKmMx07UM5zkt8vNaYaRj/%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2?node-id=42-5512"
+  },
+  "palette": {
+    "orange": "#FF642B",
+    "orangeDeep": "#FE2107",
+    "ink": "#0D0C0C",
+    "mute": "#5C5C5C",
+    "line": "#E4E3E3",
+    "canvas": "#F2F2F2",
+    "sage": "#C7C8A6",
+    "forest": "#193E26",
+    "leaf": "#63914F",
+    "success": "#3DBD4A",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "display": "Instrument Serif",
+    "ui": "Plus Jakarta Sans",
+    "heroSize": "56px",
+    "heroLineHeight": 1.08
+  },
+  "effects": {
+    "hatch": "repeating -45deg 1px lines every 10px @ ~3.5% opacity",
+    "grain": "soft-light noise tile 180px",
+    "cardShadow": "0 18px 40px rgba(15,15,15,0.06)",
+    "cardRadius": "22px",
+    "flowLines": "1–1.2px #d4d4d4 bezier connectors with white node dots"
+  },
+  "copy": {
+    "nav": ["Software", "Pricing", "Resources", "About"],
+    "announce": "HubSpot Customer Platform",
+    "headline": "Centralized tracking and AI automation for fast-moving teams.",
+    "sub": "One platform to oversee user activity, deploy immediate AI customer chat, and repurpose marketing content.",
+    "primaryCta": "Get a Demo",
+    "secondaryCta": "Get Started Free",
+    "trust": "216,000+ customers in over 135 countries grow their businesses with HubSpot",
+    "logos": ["eventbrite", "zapier", "smeg", "SurveyMonkey", "DOORDASH"]
+  }
+}
